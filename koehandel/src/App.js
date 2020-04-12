@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import socketIOClient from "socket.io-client";
+import { TopBar } from "./components";
 
 class App extends Component {
   constructor() {
@@ -16,13 +17,48 @@ class App extends Component {
     socket.on("state", state => this.setState(state));
   }
 
+  renderTopBar() {
+    const { ratCount, ezelCount, mode } = this.state;
+
+    return (
+      <TopBar
+        ratCount={ratCount}
+        ezelCount={ezelCount}
+        mode={mode}
+      />
+    )
+  };
+
+  renderPlayers() {
+  }
+
+  renderSpelBord() {
+
+  }
+
+  renderDashboard() {
+
+  }
+
+  renderContent() {
+    return (
+    <Fragment>
+    {
+      this.renderTopBar()
+      /* this.renderPlayers()
+      this.renderSpelBord()
+      this.renderDashboard() */
+    }
+    </Fragment>
+    );
+
+  }
+
   render() {
     return (
         <div style={styles.container}>
           {this.state
-              ? <p>
-                {JSON.stringify(this.state)}
-              </p>
+              ? this.renderContent()
               : <p>Loading...</p>}
         </div>
     );
