@@ -25,7 +25,6 @@ server.listen(5000, function () {
 });
 
 var state = {
-  gameStarted: false,
   modus: 'geen', //koehandel, stamboekhandel, rathandel
   ezelCount: 0,
   ratCount: 0,

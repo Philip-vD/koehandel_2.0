@@ -21,7 +21,7 @@ class App extends Component {
         <div style={{ textAlign: "center" }}>
           {this.state
               ? <p>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.state)} en dan nog iets!
               </p>
               : <p>Loading...</p>}
         </div>
