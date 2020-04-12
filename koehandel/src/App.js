@@ -7,7 +7,7 @@ class App extends Component {
     this.state = {};
   }
 
-  endpoint = "http://127.0.0.1:5000"
+  endpoint = "http://127.0.0.1:5000";
 
   componentDidMount() {
     const socket = socketIOClient(this.endpoint);
@@ -18,15 +18,21 @@ class App extends Component {
 
   render() {
     return (
-        <div style={{ textAlign: "center" }}>
+        <div style={styles.container}>
           {this.state
               ? <p>
-                {JSON.stringify(this.state)} en dan nog iets!
+                {JSON.stringify(this.state)}
               </p>
               : <p>Loading...</p>}
         </div>
     );
   }
 }
+
+const styles = {
+  container: {
+    textAlign: "center",
+  }
+};
 
 export default App;
