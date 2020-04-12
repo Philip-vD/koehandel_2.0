@@ -80,9 +80,8 @@ io.on('connection', function (socket) {
         name
       );
     }
-    sendFullState(socket);
-    io.sockets.emit('message', name + ' heeft zich aangemeld!');
     emitStateUpdate();
+    io.sockets.emit('message', name + ' heeft zich aangemeld!');
   });
 
   //name = string
